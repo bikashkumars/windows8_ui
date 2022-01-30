@@ -1,2 +1,26 @@
-# windows8_ui
-A Dynamic JavaScript and CSS intensive Web App which tries to clone the look and feel of Window 7 and 8. I have written this script and 2011 and found it in 2022 in my old hard drive. It might inspire many new comer UI developers to explore code how to write generate dynamic CSS from JavaScript. How Javascript is so powerful to create such Web App. I never looked at finetune of code quality as it was my fun project.
+# GoPlanner
+## Windows 7 and 8 UI using JavaScript and CSS
+Intensive plain JavaScript has been written to create Web app which looks like windows 7 or 8 of 2011-12. It was my fun project to learn JavaScript and use it for complex cases of web App. It might help you to explore different use-case of JavaScript and how we can control CSS from JavaScript.
+
+- Written in 2011
+- No changes since 2012 and here i am making it OpenSource
+- Fun Project
+
+## Technology
+- Plain JavaScript
+- Plain CSS3
+- HTML5
+- Jquery and Jquery UI
+- Image Assets
+
+Creator [Bikash Sundaray](https://www.linkedin.com/in/bikashkumars/)
+
+> Clone the Repo and Put entire app 
+> in Web-server like Apache or Nginx
+> Access it via localhost
+
+Feel free to use it, modify and have fun.
+
+## Development
+
+Want to contribute? Great!
