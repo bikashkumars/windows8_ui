@@ -14,7 +14,7 @@ Intensive plain JavaScript has been written to create Web app which looks like w
 - Image Assets
 
 ## Feature
-- Override Mouse point and use custom mouse pointer
+- Override Mouse pointer and use custom mouse pointer
 - Override Mouse right click and show custom Right click context menu
 - Custom CSS responsive code to auto adjust screen as per screen size
 - Key press events like (R key, ESC key, Enter key)
@@ -23,16 +23,17 @@ Intensive plain JavaScript has been written to create Web app which looks like w
 - You can right click any where on desktop and New -> Word or New -> Excel to create new Icons
 - You can delete newly created icon by right click -> delete
 - Try recyclebin to see deleted icon and item counts
-- You can move icons and always icon will always stick to its original position
+- You can move icons and always icon will stick to its original position
 - there is a limit on max icon that you can create
-- Youtube feature is broken and the library that i was using it dead now ( Zen framework Youtube library )
+- Youtube feature is broken and the library that i was using it dead now ( Zend framework Youtube library )
 - Login screen is there (But you can't close it :) )
-- You can open close right side bar by click on red green button present at middle of sidebar
+- You can slide open or slide close, right side bar by clicking on green button present at middle of sidebar
 - Start menu icon changes on mouse hover ( magic use of 1 image for the brigher effect )
-- you can minimize open window and also maximize it
-- you can watch preview of the winodow, if you minimize it ( looks like its broken right now )
+- you can minimize window and also maximize it
+- you can watch preview of the winodow present on taskbar, 
+- if you minimize recyclebin, preview will not work ( looks like its broken right now )
 - Works on Chrome, Safari and Firefox
-- Most code written in Plain JavaScript
+- Most code written in Plain JavaScript and CSS3
 
 Creator [Bikash Sundaray](https://www.linkedin.com/in/bikashkumars/)
 
