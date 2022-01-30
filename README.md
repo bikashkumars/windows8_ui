@@ -1,0 +1,2 @@
+# windows8_ui
+A Dynamic JavaScript and CSS intensive Web App which tries to clone the look and feel of Window 7 and 8. I have written this script and 2011 and found it in 2022 in my old hard drive. It might inspire many new comer UI developers to explore code how to write generate dynamic CSS from JavaScript. How Javascript is so powerful to create such Web App. I never looked at finetune of code quality as it was my fun project.
