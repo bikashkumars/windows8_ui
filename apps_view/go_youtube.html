@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Go Youtube Powered by GoPlanner.Bikash</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="https://apis.google.com/js/api.js">
+    /**
+     * Previously i was using Zend framework youtube library. But now just trying to replace that with latest v3 API.
+     * See instructions for running APIs Explorer code samples locally:
+     * https://developers.google.com/explorer-help/code-samples#javascript
+     */
+  
+    function authenticate() {
+      return gapi.auth2.getAuthInstance()
+          .signIn({scope: "https://www.googleapis.com/auth/youtube.force-ssl"})
+          .then(function() { console.log("Sign-in successful"); },
+                function(err) { console.error("Error signing in", err); });
+    }
+    function loadClient() {
+      gapi.client.setApiKey("-Yl0");
+      return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
+          .then(function() { console.log("GAPI client loaded for API"); },
+                function(err) { console.error("Error loading GAPI client for API", err); });
+    }
+    // Make sure the client is loaded and sign-in is complete before calling this method.
+    function execute() {
+      return gapi.client.youtube.search.list({
+        "part": [
+          "javascript"
+        ]
+      })
+          .then(function(response) {
+                  // Handle the results here (response.result has the parsed body).
+                  console.log("Response", response);
+                },
+                function(err) { console.error("Execute error", err); });
+    }
+    gapi.load("client:auth2", function() {
+      gapi.auth2.init({client_id: ""});
+    });
+  </script>
+<script language="javascript" src="../javascripts/jquery.min.js"></script>
+<script language="javascript" src="../javascripts/jquery-ui.min.js"></script>
+<script language="javascript" src="../apps_js/go_flip.js"></script>
+<script language="javascript" src="../apps_js/go_youtube.js"></script>
+<script language="javascript" src="../javascripts/jquery-ui.min.js"></script>
+<script language="javascript" src="../ui/minified/jquery.effects.scale.min.js"></script>
+<script language="javascript" src="../ui/minified/jquery.effects.pulsate.min.js"></script>
+<link href="../apps_css/go_youtube.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table width="100%" border="0" align="left" style="clear:both;">
+    <tr>
+ 		<td align="left" style="width:160px;"><div style="background-image:url(../apps_images/youtube.png); background-repeat:no-repeat; height:70px;width:140px;">&nbsp;</div></td> 
+        <td align="left">
+        <div style="border:1px solid #000000; width:481px; height:26px; background-color:#BBB;">
+        	
+            	<input type="text" name="youtube_keyword" id="youtube_keyword" value="" size="54" style="height:20px; font-weight:bold; float:left" />
+            	<input type="button" name="search" value="search" onclick="authenticate().then(loadClient)" style="background-image:url(../apps_images/go_youtube_button.png); background-repeat:repeat-x; height:25px; width:75px; font-family:'Courier New', Courier, monospace; float:left; cursor:pointer; " />
+         
+                <input type="hidden" name="api" value="AI39si4u4e2Lna3Vkma4t0SlUpKbW8GT2mh5Dkop4DL8QEJ2AXlMcfanbczbLxFbGlnjEH-ceM4tBPJRGlI9N6Z-FeMkKT0DIw"  />
+       		
+        </div>
+        </td> 
+    </tr> 
+</table>
+			<div id="video_search">
+               <div class="video_thumb" id="video_thumb_1">
+                    <div class="thumb_bg" id="thumb_bg_1" style="background-image:url(<?php echo htmlSpecialChars($img_url[1]) ?>);" >
+                    	<img src="../apps_images/go_play.png" class="play" id="img_1" width="50px" height="50px" alt="Go YouTube Video" />
+                    </div>
+               </div>
+               <div style="width:485px; float:left; ">
+                	
+                    <div style="background-image:url(../apps_images/video_title.png); background-repeat:no-repeat; width:445px; height:100px; text-align:left; padding:10px 10px 10px 20px; font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif; color:#000;">
+                    	<?
+                        	echo htmlSpecialChars($video->getVideoTitle());
+                            $durationInSec =  $video->getVideoDuration();
+                            $durationInSec = (int)$durationInSec * 0.0166666666666667;
+                            $durationInSec = round($durationInSec,2);
+                         ?>
+                    <p style="color:#066; font-family:Tahoma, Geneva, sans-serif; font-size:9pt;">Published <?=$published?> &nbsp;[<?=$days_diff?> Days ago]</p>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    <div style="width:100%; border:1px solid #f1f1f1; margin-bottom:10px;clear:both;">
+                        <div title="Duration of Video is <?=$durationInSec?>" style="background-image:url(../apps_images/go_duration.png); background-repeat:no-repeat;height:75px;width:75px;color:#fffff;float:left;">
+                        	<br /><br /><span style="color:#EEE;font-weight:bold;padding-top:60px;padding-left:20px;padding-top:40px;"><?=$durationInSec?></span>
+                        </div>
+                       
+                        <div class="desc_icon" id="desc_icon_1" title="Description of Video">
+                        &nbsp;
+                        </div>
+                        
+                        <div class="comment_icon" id="comment_icon_1" title="Comments on Video">
+                        &nbsp;
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                 <div id="desc_1" style="border:1px solid #cccccc; background-color:#f1f1f1; font-size:10pt; font-family:'Trebuchet MS', Arial, Helvetica, sans-serif; padding-left:10px; padding-right:10px;clear:both;display:none;">
+                        <p><b><span style="color:#C6F;text-shadow: 1px 1px 1px #000;">About This Video: </span></b><?php echo htmlSpecialChars($video->getVideoDescription()) ?></p>
+                    
+    					<p><b><span style="color:#C6F;text-shadow: 1px 1px 1px #000;">Tagged in: </span></b> <?php echo join(', ', $video->getVideoTags()) ?></p>
+                 </div>
+                    
+                    
+                    <div id="comment_1" style="clear:both;display:none">
+                    <h2 style="color:#0C6; font-family:'Comic Sans MS', cursive; font-size:19px;">comments </h2>
+                   
+                    <?
+                      
+                        $yt = new Zend_Gdata_YouTube();
+                        $commentFeed = $yt->getVideoCommentFeed($video->getVideoId());
+                        $count = 0;    
+                        foreach ($commentFeed as $commentEntry) 
+                        {
+                        
+                            $count++;
+                            ?>
+                            <div style="height:36px; width:36px;background-image:url(../apps_images/go_comment.png);color:#ffffff;  text-align:center; padding-top:3px;"><?=$count?></div>
+                           
+                            <?
+                            //echo $commentEntry->title->text . "<br />";
+                        	?>
+                            <div style="font-size:9pt; font-family:Arial, Helvetica, sans-serif;">
+                            <?
+                            echo $commentEntry->content->text . "<br /><br />";
+                        	?>
+                            </div>
+                            <?
+                        }
+                    ?>
+                    </div>
+			   </div>
+            </div>
+<?        
+        $url = 'http://www.youtube.com/v/' . $video->getVideoId() . '&fs=1';
+        $w   = 430;
+        $h   = 250;
+?>
+    
+    
+    <div id="x" style="background-image:url(../apps_images/play_box.png); background-repeat:no-repeat; height:300px; display:none; width:600px; clear:both; margin-top:50px;">
+    <div id="go_youtube_1" style="height:380px; width:600px; display:block; padding-left:60px; padding-top:20px;">
+    <object width="<?php echo $w ?>" height="<?php echo $h ?>">
+        <param name="movie" value="<?php echo htmlSpecialChars($url) ?>"></param>
+        <param name="allowFullScreen" value="true"></param>
+        <param name="allowscriptaccess" value="always"></param>
+        <embed src="<?php echo htmlSpecialChars($url) ?>"
+               type="application/x-shockwave-flash"
+               allowscriptaccess="always"
+               allowfullscreen="true"
+               width="<?php echo $w ?>" height="<?php echo $h ?>">
+        </embed>
+    </object>
+    </div>
+	</div>
+<?
+    }
+
+	}
+}
+?>
+			<!-- sidebar -->
+            <div id="sidebar" style="display:none;">
+            	<table border="0" width="100%" >
+                	<tr>
+                    	<td height="60px" valign="top">
+                        	
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td height="150px" align="center" valign="top">
+                        	
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td height="150px" valign="top"></td>
+                    </tr>
+                </table>
+            </div>
+            <!-- sidebar -->
+</body>
+</html>

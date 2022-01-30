@@ -1,0 +1,55 @@
+#video_search{
+	width:730px; clear:both; float:left; margin-bottom:10px; padding:0px 0px 0px 0px;
+	}
+.video_thumb{
+	width:175px; height:133px; float:left; padding:8px 5px 5px 12px ; margin:5px 5px 5px 5px;  
+	background-image:url(../apps_images/youtube_thumb.png); background-repeat:no-repeat;
+	background-color:#FFFFFF;
+	}
+.video_thumb:hover{
+	width:175px; height:133px; float:left; padding:8px 5px 5px 12px ; margin:5px 5px 5px 5px;  
+	background-image:url(../apps_images/youtube_thumb.png); background-repeat:no-repeat;
+	background-color:#FFFFFF;cursor:pointer;
+	}	
+.video_thumb_click{
+	width:175px; height:133px; float:left; padding:5px 5px 5px 12px ; margin:5px 5px 5px 5px;  
+	background-image:url(../apps_images/youtube_thumb_flip.png); background-repeat:no-repeat;
+	background-color:#FFFFFF;
+	}	
+.thumb_bg{
+	height:90px;width:150px; background-image:url(<?php echo htmlSpecialChars($img_url[1]) ?>); background-repeat:no-repeat; background-position:center center;
+	}
+.play{
+	cursor:pointer;
+	}
+#sidebar{
+/* opacity:0.4; */
+/* filter:alpha(opacity:40); */
+background-color:#cccccc;
+width:98%;
+height:100px;
+float:left;
+position:absolute;
+z-index:1000;
+top:250px;
+border:2px double #f1f1f1;
+}
+
+#sidebarClick{
+float:right;
+position:absolute;
+z-index:1500;
+}
+
+.desc_icon{
+height:75px;width:75px;float:left;background-image:url(../apps_images/go_description.png);background-repeat:no-repeat;cursor:pointer;	
+}
+
+.comment_icon{
+height:75px;width:75px;float:left;background-image:url(../apps_images/go_comment.png);background-repeat:no-repeat;cursor:pointer;		
+	}
+
+
+.desc_icon:hover{
+	background-image:url(../apps_images/go_description_hover.png);
+	}
